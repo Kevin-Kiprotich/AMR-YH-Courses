@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
@@ -109,6 +110,8 @@ class _MyHomePageState extends State<MyHomePage> {
       onPopInvokedWithResult: (didPop, result) {
         if (_canGoBack) {
           _webViewController.goBack();
+        }else{
+          SystemNavigator.pop();
         }
       },
       child: Scaffold(
